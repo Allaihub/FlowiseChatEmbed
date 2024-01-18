@@ -24,45 +24,29 @@ Build:
 yarn build
 ```
 
-
 ## Embed in your React App
 
 ### PopUp
 
 ```jsx
-import { BubbleChat } from "@yiruoai/flowise-embed"
+import { BubbleChat } from '@yiruoai/flowise-embed';
 
 const App = () => {
-    // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
-    return (
-        <BubbleChat
-            apptoken="${chatflowToken}"
-            apiHost="${API_HOST}"
-            groupId=""
-            thirdUserId=""
-        />
-    );
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  return <BubbleChat apptoken="${chatflowToken}" apiHost="${API_HOST}" groupId="" thirdUserId="" />;
 };
 ```
 
 ### FullPage
 
 ```jsx
-import { FullPageChat } from "@yiruoai/flowise-embed"
+import { FullPageChat } from '@yiruoai/flowise-embed';
 
 const App = () => {
-    // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
-    return (
-        <FullPageChat
-            apptoken="${chatflowToken}"
-            apiHost="${API_HOST}"
-            groupId=""
-            thirdUserId=""
-        />
-    );
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  return <FullPageChat apptoken="${chatflowToken}" apiHost="${API_HOST}" groupId="" thirdUserId="" />;
 };
 ```
-
 
 ## Embed in your HTML
 
@@ -71,13 +55,13 @@ const App = () => {
 ```html
 <script type="module">
   import Chatbot from 'https://cdn.jsdelivr.net/npm/@yiruoai/flowise-embed/dist/web.js';
-    // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
-    Chatbot.initChatInfo({
-        apptoken: "${chatflowToken}",
-        apiHost: "${API_HOST}",
-        groupId: "",
-        thirdUserId: "",
-    })
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  Chatbot.initChatInfo({
+    apptoken: '${chatflowToken}',
+    apiHost: '${API_HOST}',
+    groupId: '',
+    thirdUserId: '',
+  });
 </script>
 ```
 
@@ -86,14 +70,14 @@ const App = () => {
 ```html
 <script type="module">
   import Chatbot from './web.js';
-  Chatbot.initFull()
+  Chatbot.initFull();
   // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
   Chatbot.initChatInfo({
-      apptoken: "${chatflowToken}",
-      apiHost: "${API_HOST}",
-      groupId: "",
-      thirdUserId: "",
-  })
+    apptoken: '${chatflowToken}',
+    apiHost: '${API_HOST}',
+    groupId: '',
+    thirdUserId: '',
+  });
 </script>
 <flowise-fullchatbot></flowise-fullchatbot>
 ```
@@ -114,11 +98,11 @@ To enable full screen, add `margin: 0` to <code>body</code> style, and confirm y
     });
     // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
     Chatbot.initChatInfo({
-        apptoken: "${chatflowToken}",
-        apiHost: "${API_HOST}",
-        groupId: "",
-        thirdUserId: "",
-    })
+      apptoken: '${chatflowToken}',
+      apiHost: '${API_HOST}',
+      groupId: '',
+      thirdUserId: '',
+    });
   </script>
 </body>
 ```
@@ -132,11 +116,11 @@ You can also customize chatbot with different configuration
   import Chatbot from 'https://cdn.jsdelivr.net/npm/@yiruoai/flowise-embed/dist/web.js';
   // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
   Chatbot.initChatInfo({
-      apptoken: "${chatflowToken}",
-      apiHost: "${API_HOST}",
-      groupId: "",
-      thirdUserId: "",
-  })
+    apptoken: '${chatflowToken}',
+    apiHost: '${API_HOST}',
+    groupId: '',
+    thirdUserId: '',
+  });
   Chatbot.init({
     chatflowConfig: {
       // topK: 2
