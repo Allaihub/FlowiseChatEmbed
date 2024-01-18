@@ -20,7 +20,6 @@ Marked.setOptions({ isNoP: true });
 export const BotBubble = (props: Props) => {
   let botMessageEl: HTMLDivElement | undefined;
 
-
   onMount(() => {
     if (botMessageEl) {
       botMessageEl.innerHTML = Marked.parse(props.message);
@@ -37,8 +36,8 @@ export const BotBubble = (props: Props) => {
         class="px-4 py-2 ml-2 max-w-full chatbot-host-bubble prose"
         data-testid="host-bubble"
         style={{
-          'background-color':  props.isErrorMsg ? 'red' : (props.backgroundColor ?? defaultBackgroundColor),
-          color: props.isErrorMsg? 'white' : (props.textColor ?? defaultTextColor),
+          'background-color': props.isErrorMsg ? 'red' : props.backgroundColor ?? defaultBackgroundColor,
+          color: props.isErrorMsg ? 'white' : props.textColor ?? defaultTextColor,
           'border-radius': '6px',
         }}
       />
