@@ -1,4 +1,4 @@
-import { BubbleProps } from "./types";
+import { BubbleProps } from './types';
 
 export const defaultBotProps: BubbleProps = {
   chatflowConfig: undefined,

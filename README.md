@@ -4,7 +4,7 @@
 
 Javascript library to display flowise chatbot on your website
 
-![Flowise](https://github.com/FlowiseAI/FlowiseChatEmbed/blob/main/images/ChatEmbed.gif?raw=true)
+![Flowise](https://github.com/YiruoAI/FlowiseChatEmbed/blob/main/images/ChatEmbed.gif?raw=true)
 
 Install:
 
@@ -24,16 +24,43 @@ Build:
 yarn build
 ```
 
+## Embed in your React App
+
+### PopUp
+
+```jsx
+import { BubbleChat } from '@yiruoai/flowise-embed';
+
+const App = () => {
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  return <BubbleChat apptoken="${chatflowToken}" apiHost="${API_HOST}" groupId="" thirdUserId="" />;
+};
+```
+
+### FullPage
+
+```jsx
+import { FullPageChat } from '@yiruoai/flowise-embed';
+
+const App = () => {
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  return <FullPageChat apptoken="${chatflowToken}" apiHost="${API_HOST}" groupId="" thirdUserId="" />;
+};
+```
+
 ## Embed in your HTML
 
 ### PopUp
 
 ```html
 <script type="module">
-  import Chatbot from 'https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js';
-  Chatbot.init({
-    chatflowid: '<chatflowid>',
-    apiHost: 'http://localhost:3000',
+  import Chatbot from 'https://cdn.jsdelivr.net/npm/@yiruoai/flowise-embed/dist/web.js';
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  Chatbot.initChatInfo({
+    apptoken: '${chatflowToken}',
+    apiHost: '${API_HOST}',
+    groupId: '',
+    thirdUserId: '',
   });
 </script>
 ```
@@ -43,9 +70,13 @@ yarn build
 ```html
 <script type="module">
   import Chatbot from './web.js';
-  Chatbot.initFull({
-    chatflowid: '<chatflowid>',
-    apiHost: 'http://localhost:3000',
+  Chatbot.initFull();
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  Chatbot.initChatInfo({
+    apptoken: '${chatflowToken}',
+    apiHost: '${API_HOST}',
+    groupId: '',
+    thirdUserId: '',
   });
 </script>
 <flowise-fullchatbot></flowise-fullchatbot>
@@ -58,14 +89,19 @@ To enable full screen, add `margin: 0` to <code>body</code> style, and confirm y
   <script type="module">
     import Chatbot from './web.js';
     Chatbot.initFull({
-      chatflowid: '<chatflowid>',
-      apiHost: 'http://localhost:3000',
       theme: {
         chatWindow: {
           // height: 700, don't set height
           // width: 400, don't set width
         },
       },
+    });
+    // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+    Chatbot.initChatInfo({
+      apptoken: '${chatflowToken}',
+      apiHost: '${API_HOST}',
+      groupId: '',
+      thirdUserId: '',
     });
   </script>
 </body>
@@ -77,10 +113,15 @@ You can also customize chatbot with different configuration
 
 ```html
 <script type="module">
-  import Chatbot from 'https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js';
+  import Chatbot from 'https://cdn.jsdelivr.net/npm/@yiruoai/flowise-embed/dist/web.js';
+  // groupId和thirdUserId必传参数，用于标识聊天以及用户身份
+  Chatbot.initChatInfo({
+    apptoken: '${chatflowToken}',
+    apiHost: '${API_HOST}',
+    groupId: '',
+    thirdUserId: '',
+  });
   Chatbot.init({
-    chatflowid: '91e9c803-5169-4db9-8207-3c0915d71c5f',
-    apiHost: 'http://localhost:3000',
     chatflowConfig: {
       // topK: 2
     },
@@ -129,4 +170,4 @@ You can also customize chatbot with different configuration
 
 ## License
 
-Source code in this repository is made available under the [MIT License](https://github.com/FlowiseAI/Flowise/blob/master/LICENSE.md).
+Source code in this repository is made available under the [MIT License](https://github.com/YiruoAI/FlowiseChatEmbed/blob/main/LICENSE.md).

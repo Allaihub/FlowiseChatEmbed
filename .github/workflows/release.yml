@@ -50,19 +50,7 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: upload files to OSS
-        uses: Allaihub/aliyun-oss-website-action@master
-        with:
-          accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
-          accessKeySecret: ${{ secrets.ACCESS_KEY_SECRET }}
-          bucket: yiruoai-open
-          # use your own endpoint
-          endpoint: oss-cn-beijing.aliyuncs.com
-          folder: dist
-          prefix: sdk/chatflow
-          skipSetting: true
-          htmlCacheControl: no-cache
-          imageCacheControl: max-age=864001
-          otherCacheControl: max-age=2592001
-          # 必须加这个，不然会干掉所有文件
-          onlyUpload: true
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

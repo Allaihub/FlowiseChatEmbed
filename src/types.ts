@@ -1,4 +1,4 @@
-import { BubbleParams } from "./features/bubble/types";
+import { BubbleParams } from './features/bubble/types';
 
 export type BotProps = {
   chatflowConfig?: Record<string, unknown>;
@@ -11,4 +11,4 @@ export type ChatInfo = {
   apptoken: string;
   groupId: string;
   thirdUserId: string;
-}
+};
