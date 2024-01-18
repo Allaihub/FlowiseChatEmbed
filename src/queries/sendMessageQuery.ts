@@ -21,8 +21,6 @@ export const sendMessageQuery = (data: IncomingInput) =>
     },
   });
 
-
-
 export const clearMessages = () =>
   sendRequest<any>({
     method: 'DELETE',

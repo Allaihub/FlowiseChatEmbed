@@ -13,17 +13,18 @@ export const sendRequest = async <ResponseData>(
         method: string;
         body?: Record<string, unknown> | FormData;
         type?: string;
-        headers?: Record<string, any>
+        headers?: Record<string, any>;
       }
     | string,
 ): Promise<{ data?: ResponseData; error?: Error }> => {
   try {
     const url = typeof params === 'string' ? params : params.url;
-    let _headers = typeof params !== 'string' && isDefined(params.body)
-    ? {
-        'Content-Type': 'application/json',
-      }
-    : undefined;
+    let _headers =
+      typeof params !== 'string' && isDefined(params.body)
+        ? {
+            'Content-Type': 'application/json',
+          }
+        : undefined;
     if (typeof params !== 'string') {
       _headers = Object.assign({}, _headers, params.headers);
     }
